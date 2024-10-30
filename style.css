@@ -2,11 +2,31 @@
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 ::selection{
     color:white;
     background-color: black;
+}
+
+i.fa-ellipsis{
+    position: fixed;
+    left:20px;
+    top:20px;
+    font-size: 30px;
+    padding: 5px 7px;
+    z-index: 1002;
+    color:#4B3F6E;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+i.fa-ellipsis:hover{
+    color: white;
+    background-color: #9C8CB9;
+    border : 1px solid rgba(255, 255, 255, 0.212);
 }
 .search-bar {
     position: absolute;
@@ -21,6 +41,8 @@
     border:1px solid rgba(0, 0, 0, 0.425);
     padding:10px 20px;
     border-radius: 10px;
+    outline: none;
+    transition: outline .5s ease;
 }
 .search-bar i{
     position: absolute;
@@ -32,29 +54,80 @@
 .nav-bar{
     position:fixed;
     height:100vh;
-    width:10vw;
+    width:12vw;
     background-color: #dcd7d52a;
-    animation: slide-right 1s ease;
     z-index: 1000;
+    padding:100px 10px;
+    display: flex;
+    flex-direction: column;
+    transition: visibility .25s ease;
 }
-
+.page{
+    color: white !important;
+}
+.nav-bar i{
+    color:#4B3F6E;
+    font-size: 15px;
+    text-wrap: nowrap;
+    padding:20px 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+.nav-bar i:hover{
+    color:pink;
+}
+i.fa-circle-xmark{
+    position: absolute;
+    left:100px;
+    top:20px;
+    font-size: 30px;
+    padding: 10px;
+    /* margin: 20px; */
+    cursor: pointer;
+    /* border-radius: 50%; */
+}
+i.fa-circle-xmark:hover{
+    color: white;
+    background-color: #9C8CB9;
+    border : 1px solid rgba(255, 255, 255, 0.212);
+}
+/* line heighterree */
 .logo{
-    width:50px;
+    width:30px;
     position: fixed;
     z-index: 1001;
     margin: 20px;
+    right:10px;
 }
 
 .woody{
     height:100vh;
     width:300px;
     position: fixed;
-    left:91%;
+    left:89%;
     z-index: 1000;
-    animation: slide-left 1s ease;
     box-shadow: 2px 2px 20px #4B3F6E;
+    transition: visibility .25s ease;
 
 }
+
+
+.nav-left{
+    animation: lefty .75s ease forwards;
+}
+.nav-right{
+    animation: slide-right .75s ease forwards;
+}
+.woody-left{
+    animation: slide-left .5s ease forwards;
+}
+.woody-right{
+    animation: righty .5s ease forwards;
+}
+
+
+
 .container-1{
     background-color: #BA96C1;
     height: 100vh;
@@ -72,7 +145,21 @@
     left:68%;
     top:50%;
     transform: translate(-50%,-50%);
+    overflow: hidden;
+    /* animation:type 3s steps(40,end) forwards  ; */
+    /* , blink 1s step-end infinite ; */
+    /* margin:auto */
 }
+
+/* @keyframes type {
+    from{ width:0%;}
+    to{width:40%;}
+} */
+/* @keyframes blink {
+    50% { border-color: transparent; }
+} */
+
+
 .container-1 img{
     height:100vh;
     left:3%;
@@ -89,6 +176,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* position: sticky; */
 }
 .container-2 .featured{
     margin-top: -80px;
@@ -103,26 +191,84 @@
     font-size: 48px;
     padding:20px;
     margin-top:50px;
+    margin-bottom: 50px;
 }
 .container-2 .other-features{
     display: flex;
     max-width:50vw;
     flex-wrap: wrap;
     justify-content: center;
+    margin-left: 50px;
 }
 .container-2 .recipe-of-the-week {
     display: flex;
+    flex-direction: column;
     height: 100%;
     align-items: center;
+    margin-left:40px;
+}
+.container-2 .recipe-of-the-week .note{
+    position:absolute;
+    left:410px;
+    margin-top: 70px;
+    text-wrap: wrap;
+    width:150px;
+    background:white;
+    color:black;
+    font-size: 13px;
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black;
 }
 .container-2 .recipe-of-the-week img{
-    width:15vw;
-    height:15vw;
+    width:13vw;
+    height:13vw;
     object-fit: cover;
     margin:50px;
+    margin-left: -70px;
+    margin-bottom: 0;
     border-radius: 50%;
     box-shadow: 2px 2px 8px #4B3F6E;
 }
+
+.container-2 .recipe-of-the-week .review{
+    display:flex;
+    flex-direction: column;
+    color:rgb(59, 58, 58);
+    background-color:#b7b3c4;
+    padding: 5px;
+    margin:5px;
+    justify-content: left;
+    width:300px;
+    text-align: left;
+    text-wrap: nowrap;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+    transition: .25s ease;
+    cursor:pointer;
+}
+.container-2 .recipe-of-the-week .review:hover{
+    font-size: 17px;
+    box-shadow:2px 2px 30px rgba(255, 0, 255, 0.363);
+}
+.container-2 .recipe-of-the-week .review i{
+    color:rgb(219, 219, 103);
+    text-shadow: 1px 1px black;
+}
+.container-2 .recipe-of-the-week .review img{
+    width:40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin:0;
+    box-shadow: none;
+    position: absolute;
+    left:490px;
+    margin-top: -16px;
+}
+
+
+
 .container-2 .other-features img{
     width:10vw;
     height:10vw;
@@ -130,18 +276,133 @@
     margin:20px;
     border-radius: 2px;
     box-shadow:2px 2px 8px #4B3F6E;
+    cursor: pointer;
+    transition: .3s ease;
 }
+.featured .other-features img:hover{
+    width:11vw;
+    height:11vw;
+    box-shadow:2px 2px 30px rgb(247, 232, 247);
+}
+
+
 .container-3{
     background-color:#6C5F8D;
     height: 100vh;
     width:100%;
     display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.back{
+    background-color:#d7d1e96e;
+    border-radius: 5px;
+    height: 80vh;
+    width:70%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    box-shadow: 5px 5px 10px #4B3F6E;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 30vh;
+    margin-bottom: -30px;
+    margin-left:35px;
+}
+.container-3 h1{
+    color:rgb(0, 0, 0);
+    font-size: 38px;
+    text-align: left;
+    text-transform: uppercase;
+
+}
+.container-3 span{
+    color:#4B3F6E;
+    font-size: 64px;
+    text-align: left;
+    letter-spacing: 15px;
+    text-shadow: 1px 1px black;
+}
+
+.container-3 .name{
+    padding:10px;
+    width:50%;
+    display: flex;
+}
+.container-3 .name label{
+    text-transform: capitalize;
+    font-size: 32px;
+    color: #4B3F6E;
+    padding:5px 23px;
+}
+.container-3 .email label{
+    text-transform: capitalize;
+    font-size: 32px;
+    color: #4B3F6E;
+    padding: 5px 20px;
+    text-wrap: nowrap;
+}
+.container-3 .name input{
+    width: 100%;
+    padding:5px 20px;
+    background-color:rgb(244, 231, 253);
+    border: none;
+    border-radius: 5px;
+    transition:outline .5s ease;
+}
+.container-3 .email input{
+    width: 100%;
+    padding:5px 20px;
+    background-color:rgb(244, 231, 253);
+    border: none;
+    border-radius: 5px;
+    transition:outline .5s ease;
+}
+
+input:focus{
+    box-shadow:5px 5px 10px #2c244460;
+    outline: 1px solid pink;
+}
+.container-3 .email{
+    padding:10px;
+    width: 50%;
+    display: flex;
+}
+.container-3 button{
+    padding:10px 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    margin:50px;
+    color:#DCD7D5;
+    background-color: #000000;
+    box-shadow:5px 5px #4B3F6E;
+    letter-spacing: 2px;
+    transition: .3s ease;
+    cursor: pointer;
+}
+.container-3 button:hover{
+    padding:12px 45px;
+    background-color:rgb(116, 235, 122);
+    color:rgba(0, 0, 0, 0.555);
+    font-size: 24px;
+}
+
 .footer{
     background-color:#DCD7D5;
     height: 30vh;
     width:100%;
     display:flex;
+    justify-content: center;
+    align-items: center;
+    color:#0000006e;
 }
 
 @keyframes slide-right {
@@ -153,3 +414,28 @@
     from { transform: translateX(100%)}
     to { transform: translateX(0) }
 }
+
+@keyframes righty {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+@keyframes lefty {
+    from { transform: translateX(0)}
+    to { transform: translateX(-100%) }
+}
+
+
+.invisible{
+    visibility:hidden;
+}
+
+#repeat::after {
+    content: "|";
+    animation: blink .2s infinite ;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }

@@ -9,8 +9,21 @@
 </head>
 <body>
     <img class="logo" src=".\images\image-1.png">
+    <i class="fa-solid fa-ellipsis invisible" onclick="ellipsisClicked()"></i>
     <div class="nav-bar">
-
+        <i class="fa-solid fa-circle-xmark" onclick="crossClicked()"></i>
+        <hr>
+        <a><i class="fa-solid fa-user"> my kitchen</i></a>
+        <hr>
+        <a href="#"><i class="fa-solid fa-house page"> home</i></a>
+        <hr>
+        <a><i class="fa-solid fa-utensils"> browse</i></a>
+        <hr>
+        <a><i class="fa-solid fa-carrot"> categories</i></a>
+        <hr>
+        <a><i class="fa-solid fa-pen"> contact us</i></a>
+        <hr>
+        <!-- frinds msgs store jouneypic class theheroingredient.that will be in the profile itself ig. alertnames-->
     </div>
     <div class="search-bar">
         <input placeholder="search recipes...">
@@ -18,7 +31,7 @@
     </div>
     <img src=".\images\wood.avif" class="woody">
     <div class="container-1">
-        <h1>Recipe Book</h1>
+        <h1 id="repeat"></h1>
         <img src=".\images\watermelon (1).png">
     </div>
     <div class="container-2">
@@ -26,6 +39,41 @@
         <div class="featured">
         <div class="recipe-of-the-week">
             <img src=".\images\image copy.png">
+            <p class="note">by Ravina<br> i made this! you see! HAHAHAHA I am a GENIUS!! EAT IT NOW!!..err... will ya?</p>
+            <div class="review">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h5><img src=".\images\kirill-balobanov-2rIs8OH5ng0-unsplash.jpg"> Prachu</h5>
+                <p>this was the best</p>
+            </div>
+            <div class="review">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h5><img src=".\images\pavel-kosov-nLNguQNxLAE-unsplash.jpg"> Tanishq</h5>
+                <p>i vote for my favorite dish ever</p>
+            </div>
+            <div class="review">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h5><img src=".\images\toa-heftiba-O3ymvT7Wf9U-unsplash.jpg"> Kath</h5>
+                <p>health is wealth</p>
+            </div>
+            
         </div>
         <div class="other-features">
             <img src=".\images\image copy 2.png">
@@ -38,10 +86,26 @@
         </div>
     </div>
     <div class="container-3">
-
+        <div class="back">
+        <div class="box">
+        <h1>sign up for our </h1>
+        <span>Newsletter</span>
+        </div>
+        <div class="name">
+            <label>name</label>
+            <input placeholder="your name here">
+        </div>
+        <div class="email">
+            <label>e-mail</label>
+            <input placeholder="your mail here" type="email">
+        </div>
+        <button type="submit" >Done!</button>
+        </div>  
+        <!-- form -->
     </div>
     <div class="footer">
-
+        <p>Copyright &copy Jahanvi 2024</p>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
